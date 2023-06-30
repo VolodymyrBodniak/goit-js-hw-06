@@ -7,15 +7,26 @@ const ingredients = [
   "Condiments",
 ];
 
-const ingredientsList = document.querySelector("#ingredients");
+// const ingredientsList = document.querySelector("#ingredients");
 
-const fragment = document.createDocumentFragment();
+// const fragment = document.createDocumentFragment();
 
-ingredients.forEach((ingredient) => {
-  const listItem = document.createElement("li");
-  listItem.textContent = ingredient;
-  listItem.classList.add("item");
-  fragment.appendChild(listItem);
+// ingredients.forEach((ingredient) => {
+//   const listItem = document.createElement("li");
+//   listItem.textContent = ingredient;
+//   listItem.classList.add("item");
+//   fragment.appendChild(listItem);
+// });
+
+// ingredientsList.appendChild(fragment);
+
+const ul = document.getElementById("ingredients");
+
+const listItems = ingredients.map((ingredient) => {
+  const li = document.createElement("li");
+  li.textContent = ingredient;
+  li.classList.add("item");
+  return li;
 });
 
-ingredientsList.appendChild(fragment);
+ul.append(...listItems);
